@@ -1,0 +1,9 @@
+version: "3"
+services:
+  ml-monitoring:
+    build:
+      context: .
+    env_file:
+      - .env
+    ports:
+      - "3001:3001"

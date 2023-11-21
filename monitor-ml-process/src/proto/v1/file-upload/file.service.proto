@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package services.fileUpload.v1;
+
+service FileUploadGrpc {
+  rpc UploadFiles(stream FileChunk) returns (UploadResponse) {}
+}
+
+message FileChunk {
+  string name = 1;
+  bytes data = 2;
+}
+
+message UploadResponse {
+  string message = 1;
+}

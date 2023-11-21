@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package services.drawActivity.v1;
+
+service DrawActivityGrpc {
+  rpc PreditRectangularCoordinate(PreditRectangularCoordinateRequest) returns (PreditRectangularCoordinateResponse) {}
+}
+
+message PreditRectangularCoordinateRequest {
+  Coordinate startPosition = 1;
+  Coordinate endPosition = 2;
+}
+
+message PreditRectangularCoordinateResponse {
+  string message = 1;
+}
+
+message Coordinate {
+  int32 x = 1;
+  int32 y = 2;
+}

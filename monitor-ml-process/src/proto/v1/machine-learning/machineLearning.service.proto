@@ -1,0 +1,25 @@
+// /proto/hello/v1/hello_service.proto
+syntax = "proto3";
+
+package services.machineLearning.v1;
+
+service MachineLearningGrpc {
+  rpc CreateMachineLearning(CreateMachineLearningRequest) returns (CreateMachineLearningResponse) {}
+  rpc UpdateMachineLearning(UpdateMachineLearningRequest) returns (CreateMachineLearningResponse) {}
+}
+
+message CreateMachineLearningRequest {
+  string name = 2;
+}
+
+message CreateMachineLearningResponse {
+  int64 id = 1;
+  string name = 2;
+  int32 status = 3;
+}
+
+message UpdateMachineLearningRequest {
+  int64 id = 1;
+  string name = 2;
+  int32 status = 3;
+}
